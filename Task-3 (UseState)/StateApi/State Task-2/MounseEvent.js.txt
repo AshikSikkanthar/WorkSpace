@@ -1,0 +1,36 @@
+import React, { Component } from "react";
+
+class MounseEvent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      x: 0,
+      y: 0,
+    };
+  }
+
+  logMouseCordinates = (e) => {
+    this.setState({ x: e.clientX, y: e.clientY });
+  };
+
+  componentDidMount() {
+    window.addEventListener("mousemove", this.logMouseCordinates);
+  }
+
+  render() {
+    return (
+    
+      <div  >
+   <div  class="container" >
+          <h2 class="d-flex justify-content-center" class="text-primary">This is class Component method using state Component </h2>
+          </div>
+          <div  class="d-flex justify-content-center">
+     <p class="text-primary">  X- {this.state.x} Y- {this.state.y}</p>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default MounseEvent;

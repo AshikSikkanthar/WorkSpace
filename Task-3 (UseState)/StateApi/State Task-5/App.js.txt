@@ -1,0 +1,17 @@
+//import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+
+import HooksRandom from './StateHooks/HooksRandom';
+
+function App() {
+  return (
+    <div >
+      
+       <HooksRandom/>
+    </div>
+
+  );
+}
+
+export default App;

@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+
+function HooksCounter() {
+  const [count, setCount] = useState(0);
+
+  const incrementFive = () => {
+    for (let i = 0; i < 4; i++) {
+      setCount((count) => count + 4);
+    }
+  };
+  
+  return (
+    
+    
+    
+
+    <div class ="container">
+      
+      {/* <button onClick={()=>setCount(count+1)}>ClickHere</button> */}
+
+      <h1>This is function based component  </h1><br/>
+
+      <h1>Count - {count}</h1>
+     <div class="btn-toolbar justify-content-between" >
+      <button class="btn btn-info" onClick={incrementFive}>incrementFive</button> 
+      
+      <button class="btn btn-primary" onClick={() => setCount(count + 1)}>increment</button>   
+      <button  class="btn btn-dark" onClick={() => setCount(count - 1)}>decrement</button>
+      <button  class="btn btn-warning"onClick={() => setCount(0)}>reset</button>
+      </div>
+    </div>
+  );
+}
+
+export default HooksCounter;

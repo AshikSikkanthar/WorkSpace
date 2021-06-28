@@ -1,0 +1,33 @@
+import React, { useState, useEffect } from "react";
+
+function EffectMouse() {
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+  const logMouseCordinates = (e) => {
+    console.log("mouse event");
+    setX(e.clientX);
+    setY(e.clientY);
+  };
+
+  useEffect(() => {
+    console.log("useEffect called");
+    window.addEventListener("mousemove", logMouseCordinates);
+
+    return () => {
+      console.log("Component unmount");
+      window.removeEventListener("mousemove", logMouseCordinates);
+    };
+  }, []);
+
+  return (
+      <div >
+    <div  class= "d-flex justify-content-center" >
+
+    <p class="text-info" >  X- {x} Y- {y}</p>
+    </div>
+    </div>
+  );
+}
+
+export default EffectMouse;
