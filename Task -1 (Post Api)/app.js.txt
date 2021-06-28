@@ -1,0 +1,21 @@
+//import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+
+ import UsersPostData from './RestApi/UsersPostData';
+
+
+function App() {
+  return (
+    <div >
+
+        <UsersPostData/>  
+
+         
+     
+    </div>
+
+  );
+}
+
+export default App;

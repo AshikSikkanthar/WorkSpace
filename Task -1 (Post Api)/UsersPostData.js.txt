@@ -1,0 +1,79 @@
+import React, { Component } from "react";
+import axios from "axios";
+import FunImg from "./Image/FunImg.jpg";
+
+class UsersPostData extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      userId: "",
+      title: "",
+      body: "",
+    };
+  }
+  changeEvent = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  submitEvent = (e) => {
+    e.preventDefault();
+    console.log("Post operation api objects :: ", this.state);
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", this.state)
+      .then((res) => console.log("response :: ", res))
+      .catch((err) => console.log(err));
+  };
+
+  render() {
+    const { userId, title, body } = this.state;
+    return (
+      
+      <div className="bg"  style={{
+        backgroundImage: `url(${FunImg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}  >
+        <div  className="container bg-cover" >
+          <form onSubmit={this.submitEvent} className="py-3 px-2" >
+            <div className="mb-3">
+              <label className="form-label">User ID</label>
+              <input
+                type="text"
+                className="form-control"
+                name="userId"
+                onChange={this.changeEvent}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Title</label>
+              <input
+                type="text"
+                className="form-control"
+                name="title"
+                onChange={this.changeEvent}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Message</label>
+              <input
+                type="text"
+                className="form-control"
+                name="body"
+                onChange={this.changeEvent}
+              />
+            </div>
+            <div className="text-center">
+              <button type="submit" className="btn btn-danger w-100 btn-lg">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
+}
+export default UsersPostData;
