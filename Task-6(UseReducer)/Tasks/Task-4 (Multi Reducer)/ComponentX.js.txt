@@ -1,0 +1,13 @@
+import React from 'react'
+import ComponentY from './ComponentY'
+
+function ComponentX() {
+    return (
+        <div  className="H3" >
+            <h1  class ="text-info">This is component X</h1>
+            <ComponentY/>
+        </div>
+    )
+}
+
+export default ComponentX

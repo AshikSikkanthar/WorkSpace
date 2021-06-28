@@ -1,0 +1,14 @@
+import React from 'react'
+import ComponentZ from './ComponentZ'
+
+function ComponentY() {
+    return (
+        <div className="V2">
+            <h1  class ="text-success" >This is component Y</h1>
+            
+            <ComponentZ/>
+        </div>
+    )
+}
+
+export default ComponentY

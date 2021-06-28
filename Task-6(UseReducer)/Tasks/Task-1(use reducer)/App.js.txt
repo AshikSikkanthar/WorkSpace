@@ -1,0 +1,21 @@
+//import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+
+import ReducerCount from './reducerhook/ReducerCount';
+
+ 
+
+function App() {
+  return (
+    <div >
+ 
+ 
+      <ReducerCount/>
+
+    </div>
+
+  );
+}
+
+export default App;
