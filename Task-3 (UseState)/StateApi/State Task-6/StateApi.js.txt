@@ -1,0 +1,65 @@
+import React, { useState } from "react";
+
+function StateApi()
+ {
+         const [name, setName] = useState({ Username: "", password: "" ,Email:"" });
+
+         const changeEvent = (e) => {
+            setName(
+                {
+              ...name,
+              Username: e.target.value,
+              
+                
+            
+            
+          
+            });
+           
+      };
+
+          return(
+           
+            <div  className="Frm"  >
+                <form      >
+                <label class="text-primary">UserName</label><br/>
+             <input type="text"  onChange={changeEvent} />
+             <div/>
+             <div>
+             <label class="text-primary" >Password</label> <br/>
+             <input type="password"  onChange={(e) => setName({ ...name, password: e.target.value })} />
+             </div>
+             <div>
+                 <label class="text-primary">Email</label><br/>
+             <input type="email" onChange={(e) => setName({ ...name, Email: e.target.value })} />
+             </div>
+  
+
+             </form>
+             <div class="container" >
+          <p>
+              <span class="text-info">Username is - {name.Username}</span>
+          </p>
+
+          <p>
+              <span  class="text-info">password is - {name.password}</span>
+          </p>
+
+          <p>
+              <span  class="text-info">E-Mail is - {name.Email}</span>
+          </p>
+
+      
+          </div>
+    
+            </div>
+
+                      
+
+  
+          );
+
+          }    
+
+
+export default StateApi;
