@@ -1,0 +1,15 @@
+import React, { Component } from 'react'
+import ComponentE from './ComponentE'
+
+export class ComponentD extends Component {
+    render() {
+        return (
+            <div className="Conxt" >
+                 <h1 class="text-info">This is component D</h1><br/>
+                 <ComponentE/>
+            </div>
+        )
+    }
+}
+
+export default ComponentD
