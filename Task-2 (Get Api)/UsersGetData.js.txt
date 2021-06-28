@@ -1,0 +1,60 @@
+import React, { Component } from "react";
+import axios from "axios";
+import NaturePic from "./Image/NaturePic.jpg";
+
+class UsersGetData extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      Usersinfo: [],
+
+      errorMessage: null,
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => {
+        console.log("response : ", response);
+        this.setState({
+          Usersinfo: response.data,
+        });
+      })
+      .catch((error) => {
+        this.setState({ errorMessage: error.message });
+        console.error("There was an error!", error);
+      });
+  }
+
+  render() {
+    const { Usersinfo } = this.state;
+
+    console.log("Users state", this.state);
+
+    return (
+      <div
+        className="py-3"
+        style={{
+          backgroundImage: `url(${NaturePic})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="container">
+          {Usersinfo.length
+            ? Usersinfo.map((info) => (
+                <div className="card text-center m-3 py-2" key={info.id}>
+                  <span className="card-body py-0 mb-1"> <div className="badge bg-primary">{info.userId}</div> </span>
+                  <p className="card-body py-0 mb-0 "> {info.title}</p>
+                </div>
+              ))
+            : null}
+        </div>
+      </div>
+    );
+  }
+}
+
+export default UsersGetData;
