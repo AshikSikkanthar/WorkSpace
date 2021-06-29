@@ -1,0 +1,58 @@
+//import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+
+  import ParentContext from './Context/ParentContext';
+
+
+ export const  Context = React.createContext()
+
+  
+
+ const themes = {
+  light: {
+    foreground: "#000000",
+    background: "#eeeeee"
+  },
+  dark: {
+    foreground: "#ffffff",
+    background: "#222222"
+  }
+};
+
+ export const ColorContext = React.createContext(themes.light);
+
+
+
+
+function App() {
+
+
+  
+  
+  return (
+    <div >
+      
+
+   
+   
+    
+        <Context.Provider value={'Ashik'}>
+          { <ColorContext.Provider value={themes.dark}>
+
+          <ParentContext/> 
+
+          </ColorContext.Provider>
+          }
+
+         </Context.Provider>
+
+
+           
+    
+    </div>
+
+  );
+}
+
+export default App;
