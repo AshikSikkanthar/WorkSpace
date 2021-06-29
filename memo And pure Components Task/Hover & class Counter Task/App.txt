@@ -1,0 +1,45 @@
+//import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+
+ import ParentComponent from './component/ParentComponent';
+ import PureClass from './component/PureClass';
+ import RefsDemo from './component/RefsDemo';
+  import RefComponent from './component/RefComponent ';
+  import HoverComp from './Viewall/HoverComp';
+
+function App() {
+
+
+  
+  return (
+    <div >
+      
+
+             
+      
+     
+       <ParentComponent/> 
+      <PureClass/> 
+       <RefsDemo/>
+      <RefComponent/> 
+
+     <HoverComp/>   
+      
+     
+   
+   
+    
+       
+ 
+     
+    
+ 
+     
+    
+    </div>
+
+  );
+}
+
+export default App;
