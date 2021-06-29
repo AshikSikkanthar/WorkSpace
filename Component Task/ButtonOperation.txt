@@ -1,0 +1,53 @@
+import React,{ Component } from 'react'
+class ButtonOperation extends Component
+{
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            count:0
+        }
+    }
+    addbutton()
+    {
+        this.setState({
+          count:this.state.count+1000
+
+        },
+        console.log("count ::", this.state.count)
+        )
+    }
+    subbutton()
+    {
+        this.setState({
+          count:this.state.count-1000
+
+        },
+        console.log("count ::", this.state.count)
+        )
+    }
+
+    reset()
+    {
+        this.setState({
+            count:0
+  
+          },
+          console.log("count ::", this.state.count)     
+         ) 
+        }
+        render(){
+            return(
+                <div   class="d-flex justify-content-around" >
+                  
+                   <h3 class="text-danger" > count = {this.state.count} </h3>
+                   
+                    <button  class="btn btn-dark btn-rounded"onClick={()=>this.addbutton()}>Increment</button>
+                    <button class="btn btn-info btn-rounded" onClick={()=>this.subbutton()}>Decrement</button>
+                    <button   class="btn btn-warning btn-rounded"  onClick={()=>this.reset()}>Reset</button>
+                    
+                </div>
+            )
+        }
+}
+export default ButtonOperation;
