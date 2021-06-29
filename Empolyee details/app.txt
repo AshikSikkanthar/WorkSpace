@@ -1,0 +1,20 @@
+//import logo from './logo.svg';
+import './App.css';
+import Emplist from './component/Emplist';
+import ProductList from './component/Empdetails';
+ 
+
+function App() {
+  return (
+    <div >
+     <h3> Emplyee details List </h3>
+      <Emplist empid= "1" rollno="2000" company="Sony" designation= "Dba developer"  Rating="4" />
+      
+      <ProductList/>
+     
+    </div>
+
+  );
+}
+
+export default App;

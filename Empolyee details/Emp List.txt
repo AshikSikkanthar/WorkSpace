@@ -1,0 +1,21 @@
+import React  from 'react'
+const emplist =(props)=>
+{
+
+    return(
+        <div > 
+
+         <p align ="center" class="text-danger" >Emp Id:{props.empid}  </p>
+        <p align ="center" class="text-danger" >Rollno :{props.rollno}  </p>
+        <p align ="center" class="text-danger" >Company :{props.company}  </p>
+        <p align ="center" class="text-danger" >Designation :{props.designation}  </p>
+        <p align ="center" class="text-danger" >Rating :{props.Rating}  </p> 
+        
+        </div>
+    )
+
+
+}
+
+ export default emplist;
+
